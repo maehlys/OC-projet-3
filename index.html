@@ -22,24 +22,16 @@
     <title>PROJET 3 - ohmyfood</title>
 </head>
 
-<body>
-    <div class="loader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+<body onload="myFunction()">
+    <div id="ring">Loading
+        <span></span>
     </div>
     <header>
         <nav>
             <a href="index.html"><img src="asset/images/logo/ohmyfood.png" alt="booki-logo"></a>
         </nav>
         </header>
-    <main>
+    <main id="content" class="animate-bottom">
         <section class="localisation">
             <div class="container">
                 <p><i class="fas fa-location-dot"></i> Paris, Belleville</p>
@@ -145,6 +137,22 @@
             </div>
         </div>
     </footer>
+
+
+<script>
+    var myVar;
+
+    function myFunction() {
+        myVar = setTimeout(showPage, 2000);
+    }
+
+    function showPage() {
+        document.getElementById("ring").style.display = "none";
+        document.getElementById("content").style.opacity = "1";
+        
+    }
+</script>
+
 </body>
 
 </html>

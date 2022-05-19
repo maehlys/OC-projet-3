@@ -1,6 +1,4 @@
         /* reglage */
-
-        /* à voir => text-overflow: ellipsis; */
         
          :root {
             /* font-family: 'Roboto',
@@ -25,7 +23,160 @@
             transition: all 0.3s ease-in-out;
         }
 
+        /* Animation */
+        /* #loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+            width: 120px;
+            height: 120px;
+            margin: -76px 0 0 -76px;
+            border: 16px solid var(--snd-gray);
+            border-radius: 50%;
+            border-top: 16px solid var(--main-color);
+            border-bottom: 16px solid var(--snd-color);
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
 
+        } */
+        #ring {
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
+        width:150px;
+        height:150px;
+        background:transparent;
+        border:3px solid #3c3c3c;
+        border-radius:50%;
+        text-align:center;
+        line-height:150px;
+        font-family:sans-serif;
+        font-size:20px;
+        color:var(--main-color);
+        letter-spacing:4px;
+        text-transform:uppercase;
+        text-shadow:0 0 10px var(--main-color);
+        box-shadow:0 0 20px rgba(0, 0, 0, .5);
+        }
+        
+        #ring:before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top: 3px solid var(--main-color);
+            border-right: 3px solid var(--main-color);
+            border-radius: 50%;
+            animation: animateC 2s linear infinite;
+        }
+        
+        #ring span {
+            display: block;
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 50%;
+            width: 50%;
+            height: 4px;
+            background: transparent;
+            transform-origin: left;
+            animation: animate 2s linear infinite;
+        }
+        
+        #ring span:before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--main-color);
+            top: -6px;
+            right: -8px;
+            box-shadow: 0 0 20px var(--main-color);
+        }
+        
+        @keyframes animateC {
+            0% {
+                transform: rotate(0deg);
+            }
+        
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: rotate(45deg);
+            }
+        
+            100% {
+                transform: rotate(405deg);
+            }
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+
+        /* Add animation to "page content" */
+        
+        #content {
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+        /* .loading {
+            position: relative;
+            -webkit-animation-name: animatebottom;
+            -webkit-animation-duration: 3s;
+            animation-name: animatebottom;
+            animation-duration: 3s;
+        }
+        
+
+        @-webkit-keyframes animatebottom {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes animatebottom {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        } */
+
+        
         
         body {
             /* Couleurs sites */
@@ -36,7 +187,7 @@
             overflow-x: hidden;
             margin: 0;
         }
-        
+
         a {
             text-decoration: none;
             font-weight: normal;
@@ -524,96 +675,8 @@
             width: 75%;
         }
 
-        
-        /* Animation */
-        /* .loader {
-            display: inline-block;
-            position: relative;
-            width: 80px;
-            height: 80px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            z-index: 1;
-            
-        }
-        
-        .loader div {
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: rgb(255, 121, 218);
-            background: linear-gradient(180deg, rgba(255, 121, 218, 1) 0%, rgba(147, 86, 220, 1) 60%);
-            animation: spin 1.5s linear infinite;
-        }
-        
-        .loader div:nth-child(1) {
-            top: 8px;
-            left: 8px;
-            animation-delay: 0s;
-        }
-        
-        .loader div:nth-child(2) {
-            top: 8px;
-            left: 32px;
-            animation-delay: -0.4s;
-        }
-        
-        .loader div:nth-child(3) {
-            top: 8px;
-            left: 56px;
-            animation-delay: -0.8s;
-        }
-        
-        .loader div:nth-child(4) {
-            top: 32px;
-            left: 8px;
-            animation-delay: -0.4s;
-        }
-        
-        .loader div:nth-child(5) {
-            top: 32px;
-            left: 32px;
-            animation-delay: -0.8s;
-        }
-        
-        .loader div:nth-child(6) {
-            top: 32px;
-            left: 56px;
-            animation-delay: -1.2s;
-        }
-        
-        .loader div:nth-child(7) {
-            top: 56px;
-            left: 8px;
-            animation-delay: -0.8s;
-        }
-        
-        .loader div:nth-child(8) {
-            top: 56px;
-            left: 32px;
-            animation-delay: -1.2s;
-        }
-        
-        .loader div:nth-child(9) {
-            top: 56px;
-            left: 56px;
-            animation-delay: -1.6s;
-        }
-        
-        @keyframes spin {
-        
-            0%,
-            100% {
-                opacity: 1;
-            }
-        
-            50% {
-                opacity: 0.5;
-            }
-        } */
 
+       
         /*  MEDIAS QUERIES*/
         
         @media only screen and (max-width: 992px) {
