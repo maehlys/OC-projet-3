@@ -22,9 +22,11 @@
     <title>PROJET 3 - ohmyfood</title>
 </head>
 
-<body onload="myFunction()">
-    <div id="ring">Loading
-        <span></span>
+<body>
+    <div class="animation-load">
+        <div id="ring">Loading
+            <span></span>
+        </div>
     </div>
     <header>
         <nav>
@@ -137,21 +139,6 @@
             </div>
         </div>
     </footer>
-
-
-<script>
-    var myVar;
-
-    function myFunction() {
-        myVar = setTimeout(showPage, 2000);
-    }
-
-    function showPage() {
-        document.getElementById("ring").style.display = "none";
-        document.getElementById("content").style.opacity = "1";
-        
-    }
-</script>
 
 </body>
 

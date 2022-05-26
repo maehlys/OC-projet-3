@@ -23,158 +23,6 @@
             transition: all 0.3s ease-in-out;
         }
 
-        /* Animation */
-        /* #loader {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            z-index: 1;
-            width: 120px;
-            height: 120px;
-            margin: -76px 0 0 -76px;
-            border: 16px solid var(--snd-gray);
-            border-radius: 50%;
-            border-top: 16px solid var(--main-color);
-            border-bottom: 16px solid var(--snd-color);
-            -webkit-animation: spin 2s linear infinite;
-            animation: spin 2s linear infinite;
-
-        } */
-        #ring {
-        position:absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        width:150px;
-        height:150px;
-        background:transparent;
-        border:3px solid #3c3c3c;
-        border-radius:50%;
-        text-align:center;
-        line-height:150px;
-        font-family:sans-serif;
-        font-size:20px;
-        color:var(--main-color);
-        letter-spacing:4px;
-        text-transform:uppercase;
-        text-shadow:0 0 10px var(--main-color);
-        box-shadow:0 0 20px rgba(0, 0, 0, .5);
-        }
-        
-        #ring:before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            width: 100%;
-            height: 100%;
-            border: 3px solid transparent;
-            border-top: 3px solid var(--main-color);
-            border-right: 3px solid var(--main-color);
-            border-radius: 50%;
-            animation: animateC 2s linear infinite;
-        }
-        
-        #ring span {
-            display: block;
-            position: absolute;
-            top: calc(50% - 2px);
-            left: 50%;
-            width: 50%;
-            height: 4px;
-            background: transparent;
-            transform-origin: left;
-            animation: animate 2s linear infinite;
-        }
-        
-        #ring span:before {
-            content: '';
-            position: absolute;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: var(--main-color);
-            top: -6px;
-            right: -8px;
-            box-shadow: 0 0 20px var(--main-color);
-        }
-        
-        @keyframes animateC {
-            0% {
-                transform: rotate(0deg);
-            }
-        
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-        
-        @keyframes animate {
-            0% {
-                transform: rotate(45deg);
-            }
-        
-            100% {
-                transform: rotate(405deg);
-            }
-        }
-
-        @-webkit-keyframes spin {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-
-
-        /* Add animation to "page content" */
-        
-        #content {
-            opacity: 0;
-            transition: all 1s ease-in-out;
-        }
-        /* .loading {
-            position: relative;
-            -webkit-animation-name: animatebottom;
-            -webkit-animation-duration: 3s;
-            animation-name: animatebottom;
-            animation-duration: 3s;
-        }
-        
-
-        @-webkit-keyframes animatebottom {
-            from {
-                opacity: 0
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        @keyframes animatebottom {
-            from {
-                opacity: 0
-            }
-
-            to {
-                opacity: 1
-            }
-        } */
 
         
         
@@ -334,7 +182,7 @@
             text-align: center;
         }
 
-        /* section réservation */
+        /* section reservation */
 
         .reservation .container{
             justify-content: center;
@@ -603,6 +451,7 @@
             display: flex;
             justify-content: space-between;
             align-items: end;
+            opacity: 0;
         }
         #restaurant .restaurant .part-menu .box.plat .des {
             width: 90%;
@@ -675,6 +524,161 @@
             width: 75%;
         }
 
+
+        /* Animation */
+        .animation-load {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background-color: white;
+            animation: dispair 2s ease 3s 1 normal forwards;
+            -webkit-animation: dispair 2s ease 3s 1 normal forwards;
+            animation: 
+        }
+        
+        #ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            background: white;
+            border: 3px solid var(--scnd-gray);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 150px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: var(--main-color);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px var(--main-color);
+            box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+        
+        }
+        
+        
+        #ring:before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid transparent;
+            border-top: 3px solid var(--main-color);
+            border-right: 3px solid var(--main-color);
+            border-radius: 50%;
+            animation: animateC 5s ease 0s 1 normal forwards;
+        
+        }
+        
+        #ring span {
+            display: block;
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 50%;
+            width: 50%;
+            height: 4px;
+            background: transparent;
+            transform-origin: left;
+            animation: animate 5s ease 0s 1 normal forwards;
+        }
+        
+        #ring span:before {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--main-color);
+            top: -6px;
+            right: -8px;
+            box-shadow: 0 0 20px var(--main-color);
+        }
+        
+        @keyframes animateC {
+            0% {
+                transform: rotate(0deg);
+            }
+        
+        
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: rotate(45deg);
+            }
+        
+        
+            100% {
+                transform: rotate(405deg);
+            }
+        }
+        
+        @keyframes dispair {
+            0% {
+                opacity: 1;
+                /* visibility: visible; */
+            }
+        
+        
+            100% {
+                /* visibility: hidden; */
+                opacity: 0;
+                display: none;
+                z-index: -1;
+            }
+        }
+        
+        @-webkit-keyframes dispair {
+            0% {
+                opacity: 1;
+                /*visibility: visible; */
+            }
+            100% {
+                /* visibility: hidden; */
+                opacity: 0;
+                display: none;
+                z-index: -1;
+            }
+        }
+
+        #restaurant .restaurant .part-menu.entree .box.plat {
+            animation: reapair 2s ease 0.5s 1 normal forwards;
+        }
+
+        #restaurant .restaurant .part-menu.plat .box.plat {
+            animation: reapair 2s ease 2.5s 1 normal forwards;
+        }
+
+        #restaurant .restaurant .part-menu.dessert .box.plat {
+            animation: reapair 2s ease 4.5s 1 normal forwards;
+        }
+
+
+        @keyframes reapair {
+            0% {
+                opacity: 0;
+                transform: translateY(250px);
+            }
+
+            75% {
+                opacity: 0.2;
+            }
+        
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
        
         /*  MEDIAS QUERIES*/
