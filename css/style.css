@@ -69,6 +69,14 @@
         h1{
             font-family: 'Shrikhand',cursive;
         }
+
+        h1.h1{
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            line-height: 1.1em;
+            margin: 0.67em 1em;
+        }
         
         h1.h2 {
             font-family: 'Roboto', sans-serif;
@@ -92,7 +100,7 @@
         p {
             font-weight: normal;
             font-size: 14px;
-            line-height: 1.2em;
+            line-height: 1.1em;
             margin: 0;
         }
         
@@ -105,12 +113,13 @@
             max-width: 1340px;
             width: 100%;
             display: flex;
-            padding: 40px 20px;
+            padding: 30px 20px;
             flex-direction: column;
             margin: auto;
         }
         
         .box {
+            background: transparent;
             cursor: pointer;
             border-radius: 15px;
             -webkit-box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.15);
@@ -147,7 +156,7 @@
 
         header nav {
             position: fixed;
-            z-index: 1000;            
+            z-index: 998;            
             display: flex;
             width: 100%;
             justify-content: space-between;
@@ -171,8 +180,12 @@
 
         /* section location */
 
-        .localisation{
+        .localisation, .restaurants{
             background-color: var(--scnd-gray);
+        }
+
+        .reservation {
+            background-color: var(--ter-gray);
         }
 
         .localisation .container{
@@ -182,13 +195,17 @@
             text-align: center;
         }
 
+        .localisation p i{
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
         /* section reservation */
 
         .reservation .container{
             justify-content: center;
             align-items: center;
             text-align: center;
-            background-color: var(--ter-gray);
         }
 
         .reservation .container h2{
@@ -219,6 +236,7 @@
         .fonctionnement .step .box{
             padding: 20px 30px;
             width: 100%;
+            font-weight: 600;
         }
 
         .fonctionnement .step .nbr {
@@ -237,9 +255,15 @@
         .fonctionnement .step .box i{
             margin-right: 15px;
             font-size: 20px;
+            width: 20px;
+
         }
 
-        .fonctionnement .step .box i:hover {
+        .fonctionnement .step .box:hover {
+            background: rgba(146, 86, 220, .2);
+        }
+
+        .fonctionnement .step .box:hover i {
             color: var(--main-color);
         }
 
@@ -259,7 +283,7 @@
 
         }
 
-        .restaurants .list figure {
+        .restaurants .list a.card-restaurant {
             display: flex;
             flex-direction: column;
             width: 30%;
@@ -282,12 +306,12 @@
         .restaurants .list figure figcaption p.strong{
             font-weight: 700;
             font-size: 18px;
-            margin-bottom: 5px;
+            margin-bottom: 0px;
         }
 
         .restaurants .list figure figcaption p{
             
-            font-size: 16px;
+            font-size: 18px;
         }
 
         .restaurants .list figure figcaption i, .fa-heart {
@@ -356,6 +380,7 @@
         
         footer .container .nav a{
             color: white !important;
+            line-height: 2em;
         }
         
 
@@ -536,7 +561,6 @@
             background-color: white;
             animation: dispair 2s ease 3s 1 normal forwards;
             -webkit-animation: dispair 2s ease 3s 1 normal forwards;
-            animation: 
         }
         
         #ring {
@@ -652,22 +676,22 @@
         }
 
         #restaurant .restaurant .part-menu.entree .box.plat {
-            animation: reapair 2s ease 0.5s 1 normal forwards;
+            animation: reapair 1.5s ease 0.5s 1 normal forwards;
         }
 
         #restaurant .restaurant .part-menu.plat .box.plat {
-            animation: reapair 2s ease 2.5s 1 normal forwards;
+            animation: reapair 1.5s ease 1.5s 1 normal forwards;
         }
 
         #restaurant .restaurant .part-menu.dessert .box.plat {
-            animation: reapair 2s ease 4.5s 1 normal forwards;
+            animation: reapair 1.5s ease 2.5s 1 normal forwards;
         }
 
 
         @keyframes reapair {
             0% {
                 opacity: 0;
-                transform: translateY(250px);
+                transform: translateY(-250px);
             }
 
             75% {
@@ -697,7 +721,7 @@
 
             
 
-            .restaurants .list figure {
+            .restaurants .list a.card-restaurant {
                 display: flex;
                 flex-direction: column;
                 width: 49%;
@@ -726,7 +750,7 @@
                 width: 150px;
             }
 
-            .restaurants .list figure {
+            .restaurants .list a.card-restaurant {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
